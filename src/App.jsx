@@ -8,6 +8,7 @@ import { ResultsGrid } from './components/ResultsGrid'
 function App() {
   const [search, setSearch] = useState('')
   const [games, setGames] = useState(withResults.results)
+  // const [loading, setLoading] = useState(false)
 
   const handleSearch = (e) => {
     setSearch(e.target.value)
