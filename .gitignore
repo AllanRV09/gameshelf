@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 .env
-wiht-results.json
+with-results.json
 *.local
 
 # Editor directories and files
