@@ -62,6 +62,13 @@ export function NavBar() {
                             ))}
                         </div>
                 </Menu>
+                <div className='flex flex-col gap-3 sm:flex-row sm:gap-x-8 lg:gap-x-12'>
+                    {navigation.map((item) => (
+                        <a key={item.name} href={item.href} className='text-sm/6 font-semibold text-white text-center'>
+                            {item.name}
+                        </a>
+                    ))}
+                </div>
             </nav>
         </header>
     )
