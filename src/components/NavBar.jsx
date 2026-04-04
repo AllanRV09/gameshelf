@@ -1,13 +1,12 @@
 export function NavBar() {
     const navigation = [
         { name: 'Search', href: '#' },
-        { name: 'GameDetail', href: '#' },
-        { name: 'MyShelf', href: '#' },
+        { name: 'My Shelf', href: '#' },
         { name: 'Stats', href: '#' },
     ]
 
     return (
-        <header className='absolute inset-x-0 top-0 z-50 px-4 pt-4 sm:mx-10 sm:pt-6'>
+        <header className='sticky inset-x-0 top-0 z-50 px-4 pt-4 sm:mx-10 sm:pt-6'>
             <nav className='mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between sm:gap-6'>
                 <a href="#" className='text-white font-bold text-xl'>
                     GAME SHELF
