@@ -1,13 +1,17 @@
+import { useMemo } from "react"
+
 /**
  * @param {{ games: Array<any>, search: string }} props
  */
 export function ResultsGrid({ games: allGames, search }) {
     // TODO: Remove frontend filtering when API handles search queries
 
-    const filteredGames = allGames
-        .filter((game) => (
+    const filteredGames = useMemo(
+        () => allGames.filter((game) => 
             game.name.toLowerCase().includes(search.toLowerCase())
-        ))
+        ),
+        [allGames, search]
+    )
 
     if (allGames.length === 0) {
         return (
