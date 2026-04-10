@@ -5,10 +5,10 @@ import withResults from '../with-results.json'
 import { useState } from 'react'
 import { ResultsGrid } from './components/ResultsGrid'
 
+const INITIAL_GAMES = withResults.results
+
 function App() {
   const [search, setSearch] = useState('')
-  const [games, setGames] = useState(withResults.results)
-  // const [loading, setLoading] = useState(false)
 
   const handleSearch = (e) => {
     setSearch(e.target.value)
@@ -22,7 +22,7 @@ function App() {
         handleSearch={handleSearch} />
 
       <ResultsGrid 
-      games={games}
+      games={INITIAL_GAMES}
       search={search}/>
     </>
   )
