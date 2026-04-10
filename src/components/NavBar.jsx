@@ -5,14 +5,14 @@ import {
 } from '@heroicons/react/16/solid'
 import { useState } from 'react'
 
-
-export function NavBar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const navigation = [
+const navigation = [
         { name: 'Search', href: '#' },
         { name: 'My Shelf', href: '#' },
         { name: 'Stats', href: '#' },
     ]
+
+export function NavBar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const toggleMenuButton = () => {
         setIsMenuOpen(prev => !prev)
