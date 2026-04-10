@@ -1,15 +1,10 @@
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Menu, MenuButton, MenuItems } from '@headlessui/react'
 import {
     Bars3Icon,
     XMarkIcon,
 } from '@heroicons/react/16/solid'
 import { useState } from 'react'
-
-const navigation = [
-        { name: 'Search', href: '#' },
-        { name: 'My Shelf', href: '#' },
-        { name: 'Stats', href: '#' },
-    ]
+import { NavLinks } from './NavLinks'
 
 export function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -44,23 +39,13 @@ export function NavBar() {
                         className="w-full origin-top-right backdrop-blur-[4px] p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0 sm:hidden"
                     >
                         <div className='flex flex-col gap-3 sm:flex-row sm:gap-x-8 lg:gap-x-12'>
-                            {navigation.map((item) => (
-                                <MenuItem key={item.name}>
-                                    <a href={item.href} className='w-full items-center gap-2 px-3 py-1.5 text-center font-semibold'>
-                                        {item.name}
-                                    </a>
-                                </MenuItem>
-                            ))}
+                            <NavLinks isMobile />
                         </div>
                     </MenuItems>
 
                     <div className='hidden sm:flex sm:flex-row sm:gap-x-8 lg:gap-x-12'>
-                            {navigation.map((item) => (
-                                <a key={item.name} href={item.href} className='gap-2 px-3 py-1.5 font-semibold'>
-                                    {item.name}
-                                </a>
-                            ))}
-                        </div>
+                        <NavLinks />
+                    </div>
                 </Menu>
             </nav>
         </header>
