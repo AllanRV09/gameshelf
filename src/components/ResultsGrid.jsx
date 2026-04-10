@@ -1,9 +1,7 @@
-export function ResultsGrid({ games, search }) {
-    // Esto funciona ahora con el JSON, pero cuando conecte la API real 
-    // voy a enviar el término de búsqueda como parámetro (/games?search=witcher) 
-    // y RAWG me devuelve los resultados ya filtrados. El filtro en frontend 
-    // va a desaparecer. Está bien por ahora, solo tenelo en mente
-    const filteredGames = games
+export function ResultsGrid({ games: allGames, search }) {
+    // TODO: Remove frontend filtering when API handles search queries
+
+    const filteredGames = allGames
         .filter((game) => (
             game.name.toLowerCase().includes(search.toLowerCase())
         ))
@@ -15,7 +13,7 @@ export function ResultsGrid({ games, search }) {
             </div>
             <div className='mt-5 px-8 sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4' >
                 {
-                    games.length === 0
+                   allGames.length === 0
                         ? (
                             <p>Cargando...</p>
                         )
