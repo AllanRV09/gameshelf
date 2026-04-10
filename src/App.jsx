@@ -1,9 +1,12 @@
-import './App.css'
-import { NavBar } from './components/NavBar'
-import { SearchInput } from './components/SearchInput'
-import withResults from '../with-results.json'
 import { useState } from 'react'
+
+import { NavBar } from './components/NavBar'
 import { ResultsGrid } from './components/ResultsGrid'
+import { SearchInput } from './components/SearchInput'
+
+import withResults from '../with-results.json'
+
+import './App.css'
 
 const INITIAL_GAMES = withResults.results
 

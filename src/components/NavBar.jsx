@@ -1,9 +1,7 @@
-import { Menu, MenuButton, MenuItems } from '@headlessui/react'
-import {
-    Bars3Icon,
-    XMarkIcon,
-} from '@heroicons/react/16/solid'
 import { useState } from 'react'
+import { Menu, MenuButton, MenuItems } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
+
 import { NavLinks } from './NavLinks'
 
 export function NavBar() {
