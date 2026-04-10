@@ -10,16 +10,12 @@ const INITIAL_GAMES = withResults.results
 function App() {
   const [search, setSearch] = useState('')
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value)
-  }
-
   return (
     <>
       <NavBar />
       <SearchInput
         search={search}
-        handleSearch={handleSearch} />
+        onChange={setSearch} />
 
       <ResultsGrid 
       games={INITIAL_GAMES}
