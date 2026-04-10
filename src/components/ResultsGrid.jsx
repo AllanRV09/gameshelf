@@ -1,3 +1,6 @@
+/**
+ * @param {{ games: Array<any>, search: string }} props
+ */
 export function ResultsGrid({ games: allGames, search }) {
     // TODO: Remove frontend filtering when API handles search queries
 

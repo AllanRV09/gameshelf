@@ -6,6 +6,9 @@ const navigation = [
     { name: 'Stats', href: '#' },
 ]
 
+/**
+ * @param {{ isMobile?: boolean }} props
+ */
 export function NavLinks({ isMobile = false }) {
     return navigation.map((item) => {
         if (isMobile) {

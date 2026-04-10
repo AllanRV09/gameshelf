@@ -1,3 +1,6 @@
+/**
+ * @param {{ search: string, onChange: (value: string) => void }} props
+ */
 export function SearchInput({ search, onChange }) {
     return (
         <div className='flex justify-center'>
