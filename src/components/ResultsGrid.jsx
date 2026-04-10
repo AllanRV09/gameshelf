@@ -30,7 +30,7 @@ export function ResultsGrid({ games: allGames, search }) {
             <div className='mb-2 font-semibold'>
                 <span>{search ? "Results:" : "Trending:"}</span>
             </div>
-            <div className='mt-5 px-8 sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4' >
+            <div className='mt-5 sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4' >
                 {
                     filteredGames.map((item) => (
                         <div key={item.id} className='mb-4'>
