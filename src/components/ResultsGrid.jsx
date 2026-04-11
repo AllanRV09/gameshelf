@@ -1,20 +1,18 @@
-import { useMemo } from "react"
 import { GameCard } from "./GameCard"
 
 /**
- * @param {{ games: Array<any>, search: string }} props
+ * @param {{ games: Array<any>, loading: boolean, error: string | null, search: string }} props
  */
-export function ResultsGrid({ games: allGames, search }) {
-    // TODO: Remove frontend filtering when API handles search queries
+export function ResultsGrid({ games, loading, error, search }) {
+    if (error) {
+        return (
+            <div className="flex justify-center items-center mt-10 text-red-400 text-lg h-[60vh]">
+                <p>Error: {error}</p>
+            </div>
+        )
+    }
 
-    const filteredGames = useMemo(
-        () => allGames.filter((game) =>
-            game.name.toLowerCase().includes(search.toLowerCase())
-        ),
-        [allGames, search]
-    )
-
-    if (allGames.length === 0) {
+    if (loading) {
         return (
             <div className="flex justify-center items-center mt-10 text-gray-400 text-lg h-[60vh]">
                 <p>Cargando...</p>
@@ -22,10 +20,10 @@ export function ResultsGrid({ games: allGames, search }) {
         )
     }
 
-    if (filteredGames.length === 0) {
+    if (games.length === 0) {
         return (
             <div className="flex justify-center items-center mt-10 text-gray-400 text-lg h-[60vh]">
-                <p>No se encontraron juegos según tu búsqueda</p>
+                <p>No se encontraron resultados para "{search}</p>
             </div>
         )
     }
@@ -37,7 +35,7 @@ export function ResultsGrid({ games: allGames, search }) {
             </div>
             <div className='mt-5 sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4'>
                 {
-                    filteredGames.map((game) => (
+                    games.map((game) => (
                         <GameCard key={game.id} game={game} />
                     ))
                 }

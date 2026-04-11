@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 .env
-with-results.json
+mocks
 *.local
 
 # Editor directories and files

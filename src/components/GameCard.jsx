@@ -35,9 +35,9 @@ export function GameCard({ game }) {
             aria-label={`View details for ${game.name}`}
         >
             <div className={`relative overflow-hidden rounded-md ${CARD_IMAGE_HEIGHT}`}>
-                {!imageError && game.background_image ? (
+                {!imageError && game.image ? (
                     <img
-                        src={game.background_image}
+                        src={game.image}
                         alt={game.name || "Game screenshot"}
                         className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-110 group-hover:brightness-50"
                         onError={() => setImageError(true)}
@@ -60,12 +60,12 @@ export function GameCard({ game }) {
 
             {genres.length > 0 && (
                 <div className="flex gap-2 mt-2 flex-wrap">
-                    {genres.map((genre) => (
+                    {genres.map((genreName) => (
                         <span
-                            key={genre.id}
+                            key={genreName}
                             className="bg-gray-800 text-gray-200 px-2 py-1 rounded text-xs"
                         >
-                            {genre.name}
+                            {genreName}
                         </span>
                     ))}
                 </div>
